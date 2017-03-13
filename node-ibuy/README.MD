@@ -1,4 +1,4 @@
-# Express + mysql 求购、供应信息站
+## Node.js+Express+MyQql+AngularJs 求购、供应信息站
 
 ### 列表信息
 
