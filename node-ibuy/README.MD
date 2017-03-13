@@ -1,15 +1,20 @@
-
-![avatar](https://leeleanlean.github.io/JavaScript-Segment/wechat.jpg =220)
-
-> express + mysql 求购、供应信息站
-> LeeLean
-> WeChat：987631721
-
-# 目录
-[TOC]
+# express + mysql 求购、供应信息站
 
 ### 一、列表信息
 
+* 供应列表
+* 求购列表
+
 ### 二、发布信息
 
+* 供应列表
+* 求购列表
+
 ### 三、会员中心
+
+* 会员信息
+* 我的求购列表
+* 我的供应列表
+* 注册
+* 登录
+* 退出登录
