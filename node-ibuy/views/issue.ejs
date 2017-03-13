@@ -1,0 +1,194 @@
+<% include header %>
+
+<!-- content -->
+<div class="content issue" ng-controller="issue">
+
+    <div class="list-block">
+        <form name="issueForm" ng-submit="saveIssue()">
+            <ul>
+
+                <input type="hidden" id="date" ng-model="date" ng-value="today | date:'yyyy-MM-dd'">
+                <input type="hidden" id="tid" ng-model="tid" ng-value="today | date:'yyyyMMddhhmmss'">
+
+                <!-- 类型 -->
+                <li>
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-gender"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title label">选择类型</div>
+                            <div class="item-input" dir="rtl">
+                                <select id="type">
+                                    <option value="1">供应信息</option>
+                                    <option value="2">求购信息</option>
+                                </select>
+                                <input type="hidden" ng-model="type">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- 类型 -->
+
+                <!-- 标题 -->
+                <li>
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-name"></i></div>
+                        <div class="item-inner">
+                            <label class="item-title label" for="title">信息标题</label>
+                            <div class="item-input">
+                                <input type="text" id="title" name="title" ng-model="title" placeholder="请填写标题" ng-minlength="4" ng-maxlength="15" required>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- 标题 -->
+
+                <!-- 地区 -->
+                <li>
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-gender"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title label">选择地区</div>
+                            <div class="item-input" dir="rtl">
+                                <select id="location">
+                                    <option value="上海">上海</option>
+                                    <option value="北京">北京</option>
+                                    <option value="上海">上海</option>
+                                    <option value="北京">北京</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- 地区 -->
+
+                <!-- 价格 -->
+                <li>
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-name"></i></div>
+                        <div class="item-inner">
+                            <label class="item-title label" for="price">价格</label>
+                            <div class="item-input">
+                                <input type="tel" id="price" name="price" ng-model="price" placeholder="请填写价格" required>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- 价格 -->
+
+                <!-- 单位 -->
+                <li>
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-gender"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title label">单位</div>
+                            <div class="item-input" dir="rtl">
+                                <select id="unit">
+                                    <option value="个">个</option>
+                                    <option value="袋">袋</option>
+                                    <option value="斤">斤</option>
+                                    <option value="吨">吨</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- 单位 -->
+
+                <!-- 需求量 -->
+                <li>
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-name"></i></div>
+                        <div class="item-inner">
+                            <label class="item-title label" for="demand">数量</label>
+                            <div class="item-input">
+                                <input type="tel" id="demand" name="demand" ng-model="demand" placeholder="请填写需求量" required>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- 需求量 -->
+
+                <!-- 联系人 -->
+                <li>
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-name"></i></div>
+                        <div class="item-inner">
+                            <label class="item-title label" for="contact">联系人</label>
+                            <div class="item-input">
+                                <input type="text" id="contact" name="contact" ng-model="contact" placeholder="请填写联系人" required>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- 联系人 -->
+
+                <!-- 电话 -->
+                <li>
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-name"></i></div>
+                        <div class="item-inner">
+                            <label class="item-title label" for="mobilePhone">电话</label>
+                            <div class="item-input">
+                                <input type="tel" id="mobilePhone" name="mobilePhone" ng-model="mobilePhone" placeholder="请填写电话" required>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- 电话 -->
+
+                <!-- 详细说明 -->
+                <li>
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-name"></i></div>
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <textarea id="detail" name="detail" ng-model="detail" placeholder="请填写详细说明" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- 详细说明 -->
+
+            </ul>
+
+            <div class="error-message">
+                <div ng-show="issueForm.title.$dirty && issueForm.title.$invalid">
+                    <span class="error" ng-show="issueForm.title.$error.minlength">标题最少4个字</span>
+                    <span class="error" ng-show="issueForm.title.$error.maxlength">标题最多15个字</span>
+                    <span class="error" ng-show="issueForm.title.$error.required">标题不能为空</span>
+                </div>
+
+                <div ng-show="issueForm.price.$dirty && issueForm.price.$invalid">
+                    <span class="error" ng-show="issueForm.price.$error.required">价格不能为空</span>
+                </div>
+
+                <div ng-show="issueForm.demand.$dirty && issueForm.demand.$invalid">
+                    <span class="error" ng-show="issueForm.demand.$error.required">需求量不能为空</span>
+                </div>
+
+                <div ng-show="issueForm.contact.$dirty && issueForm.contact.$invalid">
+                    <span class="error" ng-show="issueForm.contact.$error.required">联系人不能为空</span>
+                </div>
+
+                <div ng-show="issueForm.mobilePhone.$dirty && issueForm.mobilePhone.$invalid">
+                    <span class="error" ng-show="issueForm.mobilePhone.$error.required">联系电话不能为空</span>
+                </div>
+
+                <div ng-show="issueForm.detail.$dirty && issueForm.detail.$invalid">
+                    <span class="error" ng-show="issueForm.detail.$error.required">详细信息不能为空</span>
+                </div>
+
+            </div>
+
+            <!-- 发布按钮 -->
+            <button type="submit" class="button button-fill edit-btn">发布信息</button>
+            <!-- 发布按钮 -->
+
+        </form>
+
+    </div>
+
+</div>
+<!-- content -->
+
+<% include footer %>

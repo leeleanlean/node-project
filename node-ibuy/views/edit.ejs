@@ -1,0 +1,76 @@
+<% include header %>
+
+<!-- content -->
+<div class="content edit" ng-controller="edit">
+
+    <div class="list-block">
+        <ul>
+
+            <!-- 用户名 -->
+            <li>
+                <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">用户名</div>
+                        <div class="item-input">
+                            <input type="text" ng-model="userName" placeholder="请输入用户名">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!-- 用户名 -->
+
+            <!-- 密码 -->
+            <li>
+                <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">密码</div>
+                        <div class="item-input">
+                            <input type="text" ng-model="password" placeholder="请输入密码">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!-- 密码 -->
+
+            <!-- 联系电话 -->
+            <li>
+                <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">联系电话</div>
+                        <div class="item-input">
+                            <input type="text" ng-model="mobilePhone" placeholder="请输入联系电话">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!-- 联系电话 -->
+
+            <!-- 详细地址 -->
+            <li>
+                <div class="item-content">
+                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                    <div class="item-inner">
+                        <div class="item-title label">详细地址</div>
+                        <div class="item-input">
+                            <input type="text" ng-model="adress" placeholder="请输入详细地址">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!-- 详细地址 -->
+
+        </ul>
+
+        <!-- 提交按钮 -->
+        <a href="javascript:" class="button button-fill edit-btn" ng-click="editUser()">确定修改</a>
+        <!-- 提交按钮 -->
+
+    </div>
+
+</div>
+<!-- content -->
+
+<% include footer %>

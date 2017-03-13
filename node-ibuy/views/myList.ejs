@@ -1,0 +1,31 @@
+<% include header %>
+
+<!-- content -->
+<div class="content list p-t0" ng-controller="myList">
+
+    <div class="content-block">
+
+        <div ng-if="list.length < 1" class="text-center">暂无数据</div>
+
+        <!-- list -->
+        <div class="list-block media-list" ng-repeat="list in list">
+            <ul ng-if="list.type==1">
+                <li class="item-link item-content" ng-click="goDetail(list.tid,list.type)">
+                    <div class="item-inner">
+                        <div class="item-title-row">
+                            <div class="item-title" ng-bind="list.title"></div>
+                        </div>
+                        <div class="item-subtitle" ng-bind="list.detail"></div>
+                        <div class="item-text">日期：<span ng-bind="list.creatDate | date:'yyyy-MM-dd'"></span></div>
+                    </div>
+                </li>
+            </ul>
+        <!-- list -->
+        </div>
+    </div>
+    <!-- tabs -->
+
+</div>
+<!-- content -->
+
+<% include footer %>

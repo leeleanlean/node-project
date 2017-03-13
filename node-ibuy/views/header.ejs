@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title><%= title %></title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no,email=no" />
+
+<link rel="stylesheet" href="css/sm.min.css">
+<link rel="stylesheet" href="css/style.css">
+<!-- <link rel="stylesheet" href="css/sm-extend.min.css"> -->
+
+</head>
+<body>
+<!-- page-group -->
+<div class="page-group">
+    <!-- page -->
+    <div class="page">
+
+        <input type="hidden" id="navbar" value="<%= navbar %>">
+
+        <!-- tab-bar -->
+        <nav class="bar bar-tab">
+            <a class="tab-item external message" href="/">
+                <span class="icon icon-message"></span>
+                <span class="tab-label">信息</span>
+            </a>
+            <a class="tab-item external edit" href="/issue">
+                <span class="icon icon-edit"></span>
+                <span class="tab-label">发布</span>
+            </a>
+            <a class="tab-item external settings" href="/user">
+                <span class="icon icon-settings"></span>
+                <span class="tab-label">个人中心</span>
+            </a>
+        </nav>
+        <!-- tab-bar -->

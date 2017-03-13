@@ -1,0 +1,54 @@
+<% include header %>
+
+<!-- content -->
+<div class="content list" ng-controller="list">
+
+    <!-- tabs -->
+    <div class="buttons-tab">
+        <a href="#tab1" class="tab-link button active">供应信息</a>
+        <a href="#tab2" class="tab-link button">求购信息</a>
+    </div>
+    <div class="content-block">
+        <div class="tabs">
+            <div id="tab1" class="tab active">
+                <!-- list -->
+                <div class="list-block media-list" ng-repeat="buy in buy">
+                    <ul ng-if="buy.type==1">
+                        <li class="item-link item-content" ng-click="goDetail(buy.tid,buy.type)">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title" ng-bind="buy.title"></div>
+                                </div>
+                                <div class="item-subtitle" ng-bind="buy.detail"></div>
+                                <div class="item-text">日期：<span ng-bind="buy.creatDate | date:'yyyy-MM-dd'"></span></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- list -->
+            </div>
+            <div id="tab2" class="tab">
+                <!-- list -->
+                <div class="list-block media-list" ng-repeat="buy in buy">
+                    <ul ng-if="buy.type==2">
+                        <li class="item-link item-content" ng-click="goDetail(buy.tid,buy.type)">
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title" ng-bind="buy.title"></div>
+                                </div>
+                                <div class="item-subtitle" ng-bind="buy.detail"></div>
+                                <div class="item-text">日期：<span ng-bind="buy.creatDate | date:'yyyy-MM-dd'"></span></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- list -->
+            </div>
+        </div>
+    </div>
+    <!-- tabs -->
+
+</div>
+<!-- content -->
+
+<% include footer %>

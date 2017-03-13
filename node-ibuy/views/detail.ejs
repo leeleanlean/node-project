@@ -1,0 +1,26 @@
+<% include header %>
+
+<!-- content -->
+<div class="content detail" ng-controller="detail">
+
+    <div class="list-block media-list">
+        <div class="item-content">
+            <div class="item-media" ng-if="detail.type==1"><img src="images/gongying.png" style='width: 2.5rem;'></div>
+            <div class="item-media" ng-if="detail.type==2"><img src="images/qiugou.png" style='width: 2.5rem;'></div>
+            <div class="item-inner">
+                <p>联系人：<span ng-bind="detail.contact"></span></p>
+                <p>需求量：<span ng-bind="detail.demand"></span><span ng-bind="detail.unit"></span></p>
+                <p>地区：<span ng-bind="detail.location"></span></p>
+                <p>价格：<span ng-bind="detail.price"></span>/<span ng-bind="detail.unit"></span></p>
+                <p>电话：<span ng-bind="detail.mobilePhone"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="list-block detail-content" ng-bind="detail.detail">
+    </div>
+
+</div>
+<!-- content -->
+
+<% include footer %>

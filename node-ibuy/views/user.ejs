@@ -1,0 +1,84 @@
+<% include header %>
+
+<!-- content -->
+<div class="content user" ng-controller="user">
+
+    <!-- profile -->
+    <div class="list-block media-list">
+        <div class="item-content">
+            <div class="item-media"><img src="images/img.jpg" style="width: 3rem; height:3rem;"></div>
+            <div class="item-inner">
+                <p>昵称：<%= userName %></p>
+                <p>地区：<%= adress %></p>
+                <p>电话：<%= mobilePhone %></p>
+            </div>
+        </div>
+    </div>
+    <!-- profile -->
+
+    <div class="list-block">
+        <ul>
+            <li class="item-content item-link" ng-click="goEdit(uid)">
+                <div class="item-media"><i class="icon icon-f7"></i></div>
+                <div class="item-inner">
+                    <div class="item-title">修改资料</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="list-block">
+        <ul>
+            <a href="javascript:" class="item-content item-link" ng-click="mySupply()">
+                <div class="item-media"><i class="icon icon-f7"></i></div>
+                <div class="item-inner">
+                    <div class="item-title">我的供应</div>
+                </div>
+            </a>
+            <a href="javascript:" class="item-content item-link" ng-click="myBuy()">
+                <div class="item-media"><i class="icon icon-f7"></i></div>
+                <div class="item-inner">
+                    <div class="item-title">我的求购</div>
+                </div>
+            </a>
+        </ul>
+    </div>
+
+    <div class="list-block">
+        <ul>
+            <a href="javascript:" class="item-content item-link" ng-click="goLogin()">
+                <div class="item-media"><i class="icon icon-f7"></i></div>
+                <div class="item-inner">
+                    <div class="item-title">登录</div>
+                </div>
+            </a>
+            <a href="javascript:" class="item-content item-link" ng-click="goRegister()">
+                <div class="item-media"><i class="icon icon-f7"></i></div>
+                <div class="item-inner">
+                    <div class="item-title">注册</div>
+                </div>
+            </a>
+            <a href="javascript:" class="item-content item-link" ng-click="goAbout()">
+                <div class="item-media"><i class="icon icon-f7"></i></div>
+                <div class="item-inner">
+                    <div class="item-title">关于我们</div>
+                </div>
+            </a>
+        </ul>
+    </div>
+
+    <div class="list-block">
+        <ul>
+            <a href="javascript:" class="item-content item-link" ng-click="logOut()">
+                <div class="item-media"><i class="icon icon-f7"></i></div>
+                <div class="item-inner">
+                    <div class="item-title">退出登录</div>
+                </div>
+            </a>
+        </ul>
+    </div>
+
+</div>
+<!-- content -->
+
+<% include footer %>

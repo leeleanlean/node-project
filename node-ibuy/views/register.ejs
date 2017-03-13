@@ -1,0 +1,49 @@
+<% include header_noNav %>
+
+<!-- content -->
+<div class="content login" ng-controller="register">
+	
+	<div class="list-block">
+		<ul>
+			<li>
+				<div class="item-content">
+					<div class="item-media"><i class="icon icon-form-name"></i></div>
+					<div class="item-inner">
+						<div class="item-title label">用户名</div>
+						<div class="item-input">
+							<input type="text" ng-model="userName" placeholder="请输入用户名">
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item-content">
+					<div class="item-media"><i class="icon icon-form-password"></i></div>
+					<div class="item-inner">
+						<div class="item-title label">密码</div>
+						<div class="item-input">
+							<input type="password" ng-model="password" placeholder="请输入密码">
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="item-content">
+					<div class="item-media"><i class="icon icon-form-password"></i></div>
+					<div class="item-inner">
+						<div class="item-title label">重复密码</div>
+						<div class="item-input">
+							<input type="password" ng-model="passwordRepeat" placeholder="请重复输入密码">
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<button class="button button-fill login-btn" ng-click="toRegister()">注册</button>
+		<div class="forgetPwd" ng-click="goLogin()">还没有账号？立即登录</div>
+	</div>
+
+</div>
+<!-- content -->
+
+<% include footer %>
