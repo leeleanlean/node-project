@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="app">
+<head>
+<meta charset="UTF-8">
+<title><%= title %></title>
+<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+
+<!-- form -->
+<form ng-controller="form" id="uploadFiles" name="uploadFiles">
+	<div class="form-list">
+		<input type="file" name="files">
+	</div>
+	<div class="form-list">
+		<input type="file" name="files">
+	</div>
+	<div class="form-list">
+		<button type="button" ng-click="formSubmit()">Submit</button>
+	</div>
+</form>
+<!-- form -->
+
+<script src="/javascripts/angular-1.5.5.min.js"></script>
+
+<script>
+
+var app = angular.module('app', []);
+
+app.controller('form', ['$scope','$http','$location', function($scope,$http,$location){
+	$scope.formSubmit = function(){
+
+		// 获取form元素
+		var formData = new FormData(document.getElementById("uploadFiles"));
+
+		// 发送请求
+		var url = "/postFile",
+			method = "post",
+			data = formData;
+		$http({
+			url:url,
+			method:method,
+			headers : {'Content-Type': undefined},
+			data:data,
+		})
+		.success(function(data){
+			if(data.code){
+				alert("上传成功");
+				console.log(data.url);
+				window.location.href = window.location.href;
+			}else{
+				alert(data.msg);
+				window.location.href = window.location.href;
+			}
+		})
+		.error(function(){
+			alert("error");
+		});
+
+	};
+}]);
+
+</script>
+
+</body>
+</html>
