@@ -1,0 +1,88 @@
+<% include header %>
+
+<div class="list-block upload" ng-controller="upload">
+    <ul>
+        <li>
+            <div class="item-content">
+                <div class="item-inner">
+                    <div class="item-title label">歌名</div>
+                    <div class="item-input">
+                        <input type="text" ng-model="songName" placeholder="请输入歌曲名称">
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="item-content">
+                <div class="item-inner">
+                    <div class="item-title label">歌手</div>
+                    <div class="item-input">
+                        <input type="text" ng-model="singerName" placeholder="请输入歌手名称">
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="item-content">
+                <div class="item-inner">
+                    <div class="item-title label">类型</div>
+                    <div class="item-input">
+                        <select id="musicType">
+                            <option value="1">伤感</option>
+                            <option value="2">爱情</option>
+                            <option value="3">DJ</option>
+                            <option value="4">民谣</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="item-content">
+                <div class="item-inner">
+                    <div class="item-title label">歌手照片：</div>
+                    <div class="item-input">
+                        <form name="singerForm" id="singerForm">
+                            <input type="file" class="icon icon-picture" name="singer" onchange="angular.element(this).scope().singerUpload(this.files)">
+                            <input type="hidden" ng-model="singerUrl">
+                        </form>
+                        <span class="icon icon-picture" ng-if="!singerUrl"></span>
+                        <img ng-src="{{singerUrl}}" ng-if="singerUrl">
+                        <i class="icon icon-check" ng-if="singerUrl"></i>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="item-content">
+                <div class="item-inner">
+                    <div class="item-title label">上传歌曲：</div>
+                    <div class="item-input">
+                        <form name="songForm" id="songForm">
+                            <input type="file" class="icon icon-picture" name="song" onchange="angular.element(this).scope().songUpload(this.files)">
+                            <input type="hidden" ng-model="songUrl">
+                        </form>
+                        <span class="icon icon-picture" ng-if="!songUrl"></span>
+                        <span class="icon icon-check" ng-if="songUrl"></span>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+        <a href="javascript:" class="button button-big" ng-click="uploadMusic()">确定上传</a>
+
+    </ul>
+</div>
+
+<script type='text/javascript' src='javascripts/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='javascripts/sm.min.js' charset='utf-8'></script>
+<!-- <script type='text/javascript' src='javascripts/sm-extend.min.js' charset='utf-8'></script> -->
+<script type='text/javascript' src='javascripts/angular1.5.5.min.js' charset='utf-8'></script>
+<script src="javascripts/upload.js"></script>
+
+</body>
+</html>

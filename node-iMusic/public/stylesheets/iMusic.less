@@ -1,0 +1,200 @@
+*{
+	margin: 0; padding: 0;
+}
+body{
+	max-width: 1000px; margin: 0 auto; position: static; font-size: .73rem; background-color: #fff; overflow-y: scroll;
+}
+
+img{
+	width: 100%; max-width: 100%;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 254714 */
+  src: url('//at.alicdn.com/t/font_o6npd0ia149ggb9.eot');
+  src: url('//at.alicdn.com/t/font_o6npd0ia149ggb9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_o6npd0ia149ggb9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_o6npd0ia149ggb9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_o6npd0ia149ggb9.svg#iconfont') format('svg');
+}
+
+// 旋转
+@keyframes imgRrotate
+{
+　　0%{-webkit-transform:rotate(0deg);}
+　　50%{-webkit-transform:rotate(180deg);}
+　　100%{-webkit-transform:rotate(360deg);}
+}
+
+.imgRrotate{
+	animation:imgRrotate linear infinite 5s
+}
+
+.imgRrotatePaused{
+	animation-play-state:paused;
+}
+
+.tahoma{
+	font-family: "Tahoma";
+}
+
+.modal-title{
+	font-size: .8rem;
+}
+
+.modal-inner{
+	font-size: .7rem;
+}
+
+/* list */
+.list{
+	padding: 0 .5rem;
+	article{
+		padding: .5rem 0 0 0; height: 3.3rem; border-bottom: 1px solid #e7e7e7;
+		.pull-left{
+			width: 80%;
+			dl{
+				dt{
+					margin-bottom: .2rem;
+				}
+				dd{
+					font-size: .55rem; color: #a1a1a1;
+				}
+			}
+		}
+		.pull-right{
+			width: 20%; padding-right: .5rem; text-align: right;
+			i{
+				font-size: 1rem; line-height: 2.3rem; color: #a1a1a1;
+			}
+		}
+		&:last-child{
+			border-bottom: none;
+		}
+	}
+}
+
+/* play */
+.play{
+	position: absolute; top: 0; left: 0; width: 100%; height:100%; background: #2d2e30;
+	article{
+		padding-top: 1rem; text-align: center; color: #aaa;
+		h3{
+			font-size: 1rem; line-height: 2.5;
+		}
+		p{
+			margin:0; padding: 0;
+		}
+	}
+	.info-img{
+		width: 70%; margin: 2rem auto 0 auto; position: relative;
+		img{
+			max-width: 100%; border-radius: 50%;
+		}
+	}
+	.tools{
+		position: absolute; bottom: 0; left: 0; width: 100%; padding:0 .5rem 1rem .5rem; color: #aaa; background: #2d2e30;
+		.progress{
+			position: relative;
+			.default{
+				position: absolute; top: 0; left: 0; width: 100%; height: 3px; background-color: #424345;
+			}
+			.percent{
+				position: absolute; top: 0; left: 0; height: 3px; background-color: #31c37c;
+			}
+		}
+		.times{
+			height:1rem; line-height: 2; font-size: .7rem;
+		}
+		.control{
+			height: 3.5rem; line-height: 3.5rem; margin: 1rem 0; display: flex; justify-content:center; text-align: center;
+			i{
+				margin: 0 .8rem; color: #31c37c;
+				&.left,&.right{
+					font-size: 2rem;
+				}
+				&.center{
+					font-size: 3.2rem;
+				}
+				&:active{
+					color: #fff;
+				}
+				&.icon-List{
+					position: absolute; top: 2.2rem; right: .3rem; font-size: 1.3rem;
+				}
+			}
+		}
+		.others{
+			text-align: center;
+			i{
+				display: inline-block;
+			}
+		}
+	}
+}
+
+/* left-panel */
+.left-panel{
+	.content-block{
+		margin: 1rem 0;
+		article{
+			padding: .5rem 0; border-top: 1px solid #333;
+			.pull-left{
+				dl{
+					dt{
+						margin-bottom: .2rem;
+					}
+					dd{
+						font-size: .6rem;
+					}
+				}
+			}
+			.pull-right{
+				margin: .6rem .3rem 0 0;
+			}
+			&:last-child{
+				border-bottom: 1px solid #333;
+			}
+			&:hover{
+				color: #999;
+			}
+		}
+	}
+}
+
+/* upload */
+.upload{
+	margin: 0; font-size: .73rem;
+	.item-content{
+		.item-title.label{
+			width: 25%;
+		}
+		.item-input{
+			position: relative; text-align: right;
+			input[type=file]{
+				position: relative; top: 0; left: 0; height: 4rem; opacity: 0; z-index: 9999;
+			}
+			input,select{ 
+				font-size: .73rem;
+			}
+			span,img{
+				position: absolute; top: 0; left: 0; font-size: 2.5rem; margin-top: .2rem; color: #bbb;
+				&:hover{
+					color: #ddd;
+				}
+			}
+			span.icon-check{
+				color: #4cd964; font-size: 1.5rem; margin-top: .8rem;
+			}
+			img{
+				max-width: 3rem; max-height: 3rem; margin-top: .5rem; border-radius: 5px;
+			}
+			i{
+				position: absolute; top: 0; right: 3rem; font-size: 1.3rem; margin-top: 1rem; color: #4cd964;
+			}
+		}
+	}
+	.button-big{
+		margin-top:1rem; background-color: #0894ec; border: none; border-radius: 0; color: #fff;
+	}
+}

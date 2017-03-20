@@ -1,0 +1,100 @@
+<% include header %>
+
+<style>
+html,body{ height: 100%; }
+</style>
+
+<!-- play -->
+<div ng-controller="play">
+
+    <!-- page-group -->
+    <div class="page-group">
+        <div class="page">
+            <!-- content -->
+            <div class="content">
+                <!-- play -->
+                <section class="play">
+
+                    <!-- audio -->
+                    <audio id="audio"></audio>
+                    <!-- audio -->
+
+                    <!-- header -->
+                    <article>
+                        <h3 class="songName"></h3>
+                        <p class="singerName"></p>
+                    </article>
+                    <!-- header -->
+
+                    <!-- info-img -->
+                    <div class="info-img">
+                        <img class="singerUrl">
+                    </div>
+                    <!-- info-img -->
+
+                    <!-- tools -->
+                    <div class="tools">
+                        <div class="progress">
+                            <div class="default"></div>
+                            <div class="percent"></div>
+                        </div>
+                        <div class="times clearfix">
+                            <div class="pull-left"><span class="tahoma">00:00</span></div>
+                            <div class="pull-right"><span class="tahoma">00:00</span></div>
+                        </div>
+                        <div class="control">
+                            <i class="iconfont icon-shangyishou left" ng-click="prevSong()"></i>
+                            <i class="iconfont icon-bofang1 center" ng-click="controlBtn()"></i>
+                            <i class="iconfont icon-xiayishou right" ng-click="nextSong()"></i>
+                            <i class="iconfont icon-List open-panel"></i>
+                        </div>
+                        <div class="others"></div>
+                    </div>
+                    <!-- tools -->
+
+                </section>
+                <!-- play -->
+            </div>
+            <!-- content -->
+        </div>
+        <!-- page -->
+    </div>
+    <!-- page-group -->
+
+    <!-- left-panel -->
+    <div class="panel panel-left panel-reveal left-panel">
+        <div class="content-block">
+            <p>歌曲列表</p>
+            <article class="clearfix close-panel" ng-repeat="list in musicList" ng-click="playListMusic($index)">
+                <div class="pull-left">
+                    <dl>
+                        <dt ng-bind="list.songName"></dt>
+                        <dd>
+                            <span ng-bind="list.singerName"></span> | 
+                            <span ng-if="list.musicType==1">伤感</span>
+                            <span ng-if="list.musicType==2">爱情</span>
+                            <span ng-if="list.musicType==3">DJ</span>
+                            <span ng-if="list.musicType==4">民谣</span>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="pull-right">
+                    <i class="iconfont icon-gaiban-"></i>
+                </div>
+            </article>
+        </div>
+    </div>
+    <!-- left-panel -->
+
+</div>
+<!-- play -->
+
+<script type='text/javascript' src='javascripts/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='javascripts/sm.min.js' charset='utf-8'></script>
+<!-- <script type='text/javascript' src='javascripts/sm-extend.min.js' charset='utf-8'></script> -->
+<script type='text/javascript' src='javascripts/angular1.5.5.min.js' charset='utf-8'></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="javascripts/play.js"></script>
+
+</body>
+</html>
