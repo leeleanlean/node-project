@@ -4,7 +4,7 @@
 
 ### 项目演示
 
-![avatar](https://leeleanlean.github.io/JavaScript-Segment/wechat.jpg)
+![avatar](https://github.com/leeleanlean/node-project/blob/master/node-iMusic/iMusic.gif?raw=true)
 
 ### 播放器页面
 > 127.0.0.1:3000
